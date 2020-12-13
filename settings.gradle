@@ -1,0 +1,6 @@
+rootProject.name='AndroidStudy'
+include ':ActivityStack'
+include ':ActivityStackTest'
+include ':HookBasic'
+include ':BinderTestA'
+include ':BinderTestB'
