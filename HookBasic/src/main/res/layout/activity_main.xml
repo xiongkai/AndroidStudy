@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/click"
+        android:id="@+id/hookClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hook Click"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Hook Click"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/hookNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hook Notification"/>
+
+    <Button
+        android:id="@+id/hookClipBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hook ClipBoard"/>
+
+    <Button
+        android:id="@+id/hookAMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hook AMS"/>
+
+    <Button
+        android:id="@+id/hookPMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hook PMS"/>
+
+</LinearLayout>
