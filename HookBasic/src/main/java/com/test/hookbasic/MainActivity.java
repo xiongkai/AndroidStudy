@@ -1,5 +1,6 @@
 package com.test.hookbasic;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -54,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 HookPackageManagerService.test(MainActivity.this);
+            }
+        });
+        //
+        Button hookStartActivity = findViewById(R.id.hookStartActivity);
+        hookStartActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HookActivityManagerService.hookHandlerCallback();
+                startActivity(new Intent(MainActivity.this, PluginActivity.class));
             }
         });
     }

@@ -36,4 +36,10 @@
         android:layout_height="wrap_content"
         android:text="Hook PMS"/>
 
+    <Button
+        android:id="@+id/hookStartActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="startPluginActivity"/>
+
 </LinearLayout>
