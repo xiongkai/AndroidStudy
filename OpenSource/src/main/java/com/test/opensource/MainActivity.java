@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //
         LeakCanary.install(getApplication());
+        getSupportFragmentManager();
         //
         EventBus.getDefault().register(this);
         //

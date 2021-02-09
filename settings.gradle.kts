@@ -1,0 +1,10 @@
+rootProject.name="AndroidStudy"
+include(":ActivityStack")
+include(":ActivityStackTest")
+include(":HookBasic")
+include(":BinderTestA")
+include(":BinderTestB")
+include(":WidgetsListView")
+include(":OpenSource")
+include(":JavaTestCode")
+include(":KotlinTestCode")
