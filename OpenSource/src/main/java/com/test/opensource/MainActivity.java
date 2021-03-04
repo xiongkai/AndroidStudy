@@ -2,6 +2,7 @@ package com.test.opensource;
 
 import android.os.Bundle;
 
+import com.github.moduth.blockcanary.BlockCanary;
 import com.squareup.leakcanary.LeakCanary;
 
 import org.greenrobot.eventbus.EventBus;
@@ -26,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //
+        EventBus.getDefault().register(this);
+        BlockCanary.install(this, new AppBlockCanaryContext()).start();
+        //
         LeakCanary.install(getApplication());
         getSupportFragmentManager();
         //
-        EventBus.getDefault().register(this);
-        //
         try {
             OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder()
-                    .url("https://www.baidu.com").build();
+            Request request = new Request.Builder().url("https://www.baidu.com").build();
             Call call = client.newCall(request);
             Response response = call.execute();
         }catch (Exception ex){}
