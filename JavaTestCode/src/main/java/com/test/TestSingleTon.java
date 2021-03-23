@@ -5,7 +5,7 @@ class SingleTon {
     public static int count2 = 1999;
     static {
 
-        System.out.println("静态代码块1 " + count2);
+        System.out.println("static block1 " + count2);
     }
     public static final int count3 = new Integer(1);
     public static final Integer count4 = 1;
@@ -13,13 +13,13 @@ class SingleTon {
     public static final SingleTon singleTon = new SingleTon();
     static {
 
-        System.out.println("静态代码块2"+singleTon);
+        System.out.println("static block2"+singleTon);
     }
     public int a = 1;
     private SingleTon() {
         count1++;
         count2++;
-        System.out.println("构造函数"+a);
+        System.out.println("construct "+a);
     }
     {
     	a = 3;
