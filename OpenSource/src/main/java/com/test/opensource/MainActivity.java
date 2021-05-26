@@ -11,6 +11,9 @@ import org.greenrobot.eventbus.EventBus;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dalvik.system.BaseDexClassLoader;
+import dalvik.system.DexClassLoader;
+import dalvik.system.InMemoryDexClassLoader;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println(DexClassLoader.class);
+        System.out.println(BaseDexClassLoader.class);
+        System.out.println(InMemoryDexClassLoader.class);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         //
