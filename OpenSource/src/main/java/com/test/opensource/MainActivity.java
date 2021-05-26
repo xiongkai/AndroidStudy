@@ -3,6 +3,7 @@ package com.test.opensource;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.github.moduth.blockcanary.BlockCanary;
 import com.squareup.leakcanary.LeakCanary;
 
@@ -59,5 +60,7 @@ public class MainActivity extends AppCompatActivity {
         }).map(new Function<Object, Object>() {
             @Override public Object apply(Object o) { return null; }
         }).subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribe();
+        //
+        ARouter.init(getApplication());
     }
 }
