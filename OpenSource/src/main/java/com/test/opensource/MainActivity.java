@@ -3,6 +3,8 @@ package com.test.opensource;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.github.moduth.blockcanary.BlockCanary;
 import com.squareup.leakcanary.LeakCanary;
@@ -24,8 +26,11 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+@Route(path = "/app/main")
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.textView) TextView textView;
+    @Autowired
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,5 +61,6 @@ public class MainActivity extends AppCompatActivity {
         }).subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribe();
         //
         ARouter.init(getApplication());
+        ARouter.getInstance().inject(this);
     }
 }
