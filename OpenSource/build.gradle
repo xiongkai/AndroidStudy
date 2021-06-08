@@ -31,6 +31,8 @@ android {
     }
 }
 
+println hello
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -75,3 +77,12 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.android.volley:volley:1.1.1'
 }
+
+task getProjectInfo{
+    println "123"
+    println "group: $group, project.name: $project.name"
+}
+
+
+
+

@@ -15,6 +15,10 @@ buildscript {
     }
 }
 
+ext{
+    hello = "world"
+}
+
 allprojects {
     repositories {
         google()
@@ -24,4 +28,47 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+/**
+ * 配置阶段开始前回调监听
+ */
+this.beforeEvaluate {
+    println 'test:beforeEvaluate'
+}
+
+/**
+ * 配置阶段完成后回调监听
+ */
+this.afterEvaluate {
+    println 'test:afterEvaluate'
+}
+
+this.gradle.afterProject {
+    println 'test:afterProject'
+}
+
+/**
+ * gradle执行完毕的回调监听
+ */
+this.gradle.buildFinished {
+    println 'test:buildFinished'
+}
+
+this.gradle.projectsEvaluated {
+
+    println 'test:projectsEvaluated'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+task getProjectInfo{
+    println "321"
+    println "group: $group, project.name: $project.name"
+}
+subprojects {Project project->
+    task getName{
+        println(project.name)
+    }
 }

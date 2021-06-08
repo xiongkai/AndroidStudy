@@ -8,3 +8,4 @@ include(":WidgetsListView")
 include(":OpenSource")
 include(":JavaTestCode")
 include(":KotlinTestCode")
+include ':CustomView'
