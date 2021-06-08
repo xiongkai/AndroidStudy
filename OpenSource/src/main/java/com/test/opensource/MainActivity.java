@@ -1,11 +1,16 @@
 package com.test.opensource;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.github.moduth.blockcanary.BlockCanary;
 import com.squareup.leakcanary.LeakCanary;
 
@@ -62,5 +67,12 @@ public class MainActivity extends AppCompatActivity {
         //
         ARouter.init(getApplication());
         ARouter.getInstance().inject(this);
+        //
+        ImageView imageView = null;
+        if (imageView != null){
+            Glide.with(this).load("").into(imageView);
+        }
+        //
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
     }
 }
